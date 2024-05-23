@@ -4,7 +4,7 @@ using MongoDb.Data.Interfaces;
 
 namespace MongoDb.Data.Models
 {
-    public abstract class MongoDbEntity : IMongoDbEntity
+    public abstract class MongoDbEntity : IEntity
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]

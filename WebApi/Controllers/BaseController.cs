@@ -5,13 +5,12 @@ namespace WebApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class BaseController<T, O> : ControllerBase
-        where T : IMongoDbEntity
-        where O : IMongoDbOptions
+    public class BaseController<T> : ControllerBase
+        where T : IEntity
     {
-        private readonly IMongoDbRepository<T, O> _repository;
+        private readonly IRepository<T> _repository;
 
-        public BaseController(IMongoDbRepository<T, O> repository)
+        public BaseController(IRepository<T> repository)
             => _repository = repository;
 
         [HttpGet]
@@ -58,7 +57,7 @@ namespace WebApi.Controllers
 
             if (entity is null) return NotFound();
 
-            await _repository.RemoveAsync(id);
+            await _repository.DeleteAsync(id);
 
             return NoContent();
         }

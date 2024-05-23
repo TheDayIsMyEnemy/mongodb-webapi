@@ -4,9 +4,9 @@ using WebApi.Options;
 
 namespace WebApi.Controllers
 {
-    public class ProductsController : BaseController<Product, MongoDbOptions>
+    public class ProductsController : BaseController<Product>
     {
-        public ProductsController(IMongoDbRepository<Product, MongoDbOptions> repository)
+        public ProductsController(IRepository<Product> repository)
             : base(repository)
         { }
     }

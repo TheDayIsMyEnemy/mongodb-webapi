@@ -1,6 +1,6 @@
 namespace MongoDb.Data.Interfaces
 {
-    public interface IMongoDbEntity
+    public interface IEntity
     {
         public string Id { get; set; }
     }

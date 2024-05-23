@@ -5,7 +5,7 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace MongoDb.Data.Models
 {
-    public class Product : IMongoDbEntity
+    public class Product : IEntity
     {
         [BsonIgnore]
         [JsonIgnore]
